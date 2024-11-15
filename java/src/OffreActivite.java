@@ -4,7 +4,7 @@ public class OffreActivite extends Offre {
     private Activite activite;
 
     // Constructeur
-    public OffreActivite(Personne auteur, String datePublication, String description, Activite activite) {
+    public OffreActivite(PersonneConcret auteur, String datePublication, String description, Activite activite) {
         super(auteur, datePublication, description);
         this.activite = activite;
     }

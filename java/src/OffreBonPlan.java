@@ -5,7 +5,7 @@ public class OffreBonPlan extends Offre {
     private String dateExpiration;
 
     // Constructeur
-    public OffreBonPlan(Personne auteur, String datePublication, String description, String lienSite, String dateExpiration) {
+    public OffreBonPlan(PersonneConcret auteur, String datePublication, String description, String lienSite, String dateExpiration) {
         super(auteur, datePublication, description);
         this.lienSite = lienSite;
         this.dateExpiration = dateExpiration;

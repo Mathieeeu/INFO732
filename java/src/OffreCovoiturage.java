@@ -5,7 +5,7 @@ public class OffreCovoiturage extends Offre {
     private int nbPlaces;
 
     // Constructeur
-    public OffreCovoiturage(Personne auteur, String datePublication, String description, Conducteur conducteur, int nbPlaces) {
+    public OffreCovoiturage(PersonneConcret auteur, String datePublication, String description, Conducteur conducteur, int nbPlaces) {
         super(auteur, datePublication, description);
         this.conducteur = conducteur;
         this.nbPlaces = nbPlaces;

@@ -3,13 +3,11 @@ public class Voiture {
     // Attributs
     private String modele;
     private String immatriculation;
-    private Conducteur proprietaire;
 
     // Constructeur
-    public Voiture(String modele, String immatriculation, Conducteur proprietaire) {
+    public Voiture(String modele, String immatriculation) {
         this.modele = modele;
         this.immatriculation = immatriculation;
-        this.proprietaire = proprietaire;
     }
 
     // Getters et Setters
@@ -27,13 +25,5 @@ public class Voiture {
 
     public void setImmatriculation(String immatriculation) {
         this.immatriculation = immatriculation;
-    }
-
-    public Conducteur getProprietaire() {
-        return proprietaire;
-    }
-
-    public void setProprietaire(Conducteur proprietaire) {
-        this.proprietaire = proprietaire;
     }
 }

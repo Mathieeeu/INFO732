@@ -1,26 +1,17 @@
 import java.util.ArrayList;
 
-public class Proprietaire {
+public class Proprietaire extends PersonneDecorator {
     
     // Attributs
-    private Personne personne;
     private ArrayList<Logement> biens;
 
     // Constructeur
     public Proprietaire(Personne personne) {
-        this.personne = personne;
+        super(personne);
         this.biens = new ArrayList<Logement>();
     }
 
     // Getters et Setters
-    public Personne getPersonne() {
-        return personne;
-    }
-
-    public void setPersonne(Personne personne) {
-        this.personne = personne;
-    }
-
     public ArrayList<Logement> getBiens() {
         return biens;
     }
@@ -40,7 +31,7 @@ public class Proprietaire {
     // Méthodes
     // ToString
     public String toString() {
-        return personne.toString() + " (propriétaire de " + biens.size() + " logements)";
+        return super.toString() + " (propriétaire de " + biens.size() + " logements)";
     }
 
     // Proposer une offre de logement, renvoie true si l'offre a été ajoutée, false sinon

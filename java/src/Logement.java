@@ -10,7 +10,7 @@ public class Logement {
     private boolean meuble;
     private int surface;
     private Proprietaire proprietaire;
-    private ArrayList<Personne> habitants;
+    private ArrayList<PersonneConcret> habitants;
 
     // Constructeur
     public Logement(String type, String adresse, int loyer, String description, boolean meuble, int surface, Proprietaire proprietaire) {
@@ -21,7 +21,7 @@ public class Logement {
         this.meuble = meuble;
         this.surface = surface;
         this.proprietaire = proprietaire;
-        this.habitants = new ArrayList<Personne>();
+        this.habitants = new ArrayList<PersonneConcret>();
     }
 
     // Getters et Setters
@@ -81,19 +81,19 @@ public class Logement {
         this.proprietaire = proprietaire;
     }
 
-    public ArrayList<Personne> getHabitants() {
+    public ArrayList<PersonneConcret> getHabitants() {
         return habitants;
     }
 
-    public void setHabitants(ArrayList<Personne> habitants) {
+    public void setHabitants(ArrayList<PersonneConcret> habitants) {
         this.habitants = habitants;
     }
 
-    public void addHabitant(Personne habitant) {
+    public void addHabitant(PersonneConcret habitant) {
         this.habitants.add(habitant);
     }
 
-    public void removeHabitant(Personne habitant) {
+    public void removeHabitant(PersonneConcret habitant) {
         this.habitants.remove(habitant);
     }
 }

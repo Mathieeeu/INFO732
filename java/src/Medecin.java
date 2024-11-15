@@ -1,18 +1,21 @@
 import java.util.ArrayList;
 import java.time.LocalDate;
+import java.time.chrono.ThaiBuddhistChronology;
 
 public class Medecin {
 
     //Attribut
     private static Medecin instance = null;
-    private Personne personne;
+    private PersonneConcret personne;
     private ArrayList<Creneau> planning = new ArrayList<Creneau>();
 
     //Constructeur
-    private Medecin(Personne personne){}
+    private Medecin(PersonneConcret personne){
+        this.personne = personne;
+    }
 
     //Getters et setters
-    public static Medecin getInstance(Personne personne){
+    public static Medecin getInstance(PersonneConcret personne){
         if (instance == null){
             instance = new Medecin(personne);
         }
@@ -23,7 +26,7 @@ public class Medecin {
         return planning;
     }
 
-    public void setMedecin(Personne personne){
+    public void setMedecin(PersonneConcret personne){
         this.personne = personne;
     }
 
