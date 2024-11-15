@@ -86,22 +86,32 @@ public class Personne implements Observer {
     }
 
     //Methode 
-    public void accepterOffre(Offre offre){
-        //TODO 
-        if(offre.getClass().getName()=="OffreCovoiturage"){
-            
-        }
-
-        else {
+    //Méthode qui permet d'accepeté toute les type d'offre sauf les offre de covoiturage 
+    public void accepterOffre(Offre offre){ 
             offre.addParticipant(this);
-            this.offresAcceptees.add(offre);
+            this.addOffreAcceptee(offre);
+            System.out.println("vus avez été ajouté a la liste des participants");
+    }
+
+    //Offre qui permet d'accepter les offre de covoiturage et verifiant que la voiture n'est pas deja pleines
+    public void accepterOffre(OffreCovoiturage offre){ 
+      
+        if(offre.getNbPlaces()>offre.getParticipants().size()){
+            offre.addParticipant(this);
+            this.addOffreAcceptee(offre);
+            System.out.println("vous avez été ajouté a la voiture");
+        }
+        else{
+            System.out.println("la voiture est deja complete ");
         }
         
     }
 
-    public void proposerOffre(){
-        //TODO
-        
+    //methode qui permet de cree des nouvelle offre 
+    public void proposerOffreMateriel(String date, String desc,Materiel mat){
+        OffreMateriel offre=new OffreMateriel(this,date,desc,mat);
+        OffreManager offreManager = OffreManager.getInstance(); // Accéder à l'instance unique
+        offreManager.publierOffre(offre); // Appeler la méthode de publication
     }
 
     public void proposerOffreActivite(){
@@ -125,7 +135,7 @@ public class Personne implements Observer {
     }
 
     public void desincrireOffre(Offre offre){
-        //TODO
+        //TODO on se retire de l'offre soit liste des personne et de la liste des offre dans personne 
         
     }
 
