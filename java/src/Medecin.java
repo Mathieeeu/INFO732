@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class Medecin {
 
@@ -38,7 +39,20 @@ public class Medecin {
     //Ajouter un RDV médical (méthode appelée par une personne)
     public Creneau ajouterRDV(){
         Creneau dernierCreneau = this.dernierCreneauOccupé();
-        Creneau newCreneau = new Creneau(dernierCreneau);
+        LocalDate date;
+        int heureDebut;
+        int heureFin;
+        if (dernierCreneau.getHeureFin()>=18){
+            date = dernierCreneau.getDate().plusDays(1);
+            heureDebut = 8;
+            heureFin = 9;
+        }
+        else{
+            heureDebut = dernierCreneau.getHeureFin() + 1;
+            heureFin = heureDebut + 1;
+            date = dernierCreneau.getDate();
+        }
+        Creneau newCreneau = new Creneau("Creneau n°"+Integer.toString(planning.size()+1), date, heureDebut, heureFin);
         planning.add(newCreneau);
         return newCreneau;
     }
@@ -46,7 +60,7 @@ public class Medecin {
     //Renvoie le dernier creneau occupé
     public Creneau dernierCreneauOccupé(){
         Creneau lastElement = planning.get(planning.size() - 1);
-        return lastElement;
+        return (lastElement);
     }
 
 }
