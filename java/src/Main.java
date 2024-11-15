@@ -7,8 +7,5 @@ public class Main {
         Medecin medecin = Medecin.getInstance(new Personne("Champion", "Maurice"));
         System.out.println(medecin);
 
-        Personne persone = new Personne("A","B");
-
-        System.out.println(medecin.ajouterRDV());
     }
 }

@@ -9,7 +9,9 @@ public class Medecin {
     private ArrayList<Creneau> planning = new ArrayList<Creneau>();
 
     //Constructeur
-    private Medecin(Personne personne){}
+    private Medecin(Personne personne){
+        this.personne = personne;
+    }
 
     //Getters et setters
     public static Medecin getInstance(Personne personne){
@@ -60,8 +62,11 @@ public class Medecin {
 
     //Renvoie le dernier creneau occupé
     public Creneau dernierCreneauOccupé(){
-        Creneau lastElement = planning.get(planning.size() - 1);
-        return (lastElement);
+        if (!planning.isEmpty()){
+            Creneau lastElement = planning.get(planning.size() - 1);
+            return (lastElement);
+        }
+        return null;  
     }
 
 }
