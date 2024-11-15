@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+
 public class Personne implements Observer {
     
     //Attributs
     private String nom;
     private String prenom;
-    private ArrayList<String> inventaire;
+    private ArrayList<Materiel> inventaire;
     private Logement logement;
     private ArrayList<String> filtresOffres;
     private ArrayList<Offre> offresAcceptees;
