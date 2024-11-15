@@ -86,6 +86,11 @@ public class Personne implements Observer {
     }
 
     //Methode 
+
+    //To string
+    public String toString(){
+        return (prenom+" "+nom);
+    }
     public void accepterOffre(Offre offre){
         //TODO 
         if(offre.getClass().getName()=="OffreCovoiturage"){

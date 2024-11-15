@@ -28,12 +28,8 @@ public class Medecin {
     }
 
     //To string
-    public String ToString(){
-        String res = "";
-        for(Creneau creneau : planning){
-            res = res + creneau;
-        }
-        return res;
+    public String toString(){
+        return(personne.toString()+" (Médecin)");
     }
 
     //Ajouter un RDV médical (méthode appelée par une personne)
