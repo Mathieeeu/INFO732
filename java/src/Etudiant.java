@@ -43,11 +43,9 @@ public class Etudiant {
         return personne.toString() + " (Etudiant à " + composante + ")";
     }
 
-    // Proposer une offre de covoiturage, renvoie true si l'offre a été ajoutée, false sinon
-    public boolean proposerOffreCovoiturage(String datePublication, String description, String villeDepart, String villeArrivee, String dateDepart, int nbPlaces) {
+    // Demander une offre de tutorat, renvoie true si la demande a été ajoutée, false sinon
+    public boolean demanderOffreTutorat(String datePublication, String description, String matiere) {
         // TODO
         return false;
     }
-
-
 }
