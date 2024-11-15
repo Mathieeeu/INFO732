@@ -3,8 +3,12 @@ import java.util.List;
 
 public class OffreManager {
     // Attributs
+    private static OffreManager instance; // Instance unique de OfferManager
     private List<Observer> observers = new ArrayList<>();
     private List<Offre> offres = new ArrayList<>();
+
+    // Constructeur privé pour empêcher l'instanciation directe
+    private OffreManager() {}
 
     // Méthode toString()
     @Override
@@ -42,6 +46,15 @@ public class OffreManager {
 
 
     // Méthodes
+
+    // Obtenir l'instance unique
+    public static OffreManager getInstance() {
+        if (instance == null) {
+            instance = new OffreManager();
+        }
+        return instance;
+    }
+
     // Inscrire un observateur
     public void inscrire(Observer observer) {
         observers.add(observer);

@@ -28,12 +28,8 @@ public class Medecin {
     }
 
     //To string
-    public String ToString(){
-        String res = "";
-        for(Creneau creneau : planning){
-            res = res + creneau;
-        }
-        return res;
+    public String toString(){
+        return(personne.toString()+" (Médecin)");
     }
 
     //Ajouter un RDV médical (méthode appelée par une personne)
@@ -42,7 +38,12 @@ public class Medecin {
         LocalDate date;
         int heureDebut;
         int heureFin;
-        if (dernierCreneau.getHeureFin()>=18){
+        if (dernierCreneau == null){
+            date = LocalDate.now().plusDays(1);
+            heureDebut = 8;
+            heureFin = 9; 
+        }
+        else if (dernierCreneau.getHeureFin()>=18){
             date = dernierCreneau.getDate().plusDays(1);
             heureDebut = 8;
             heureFin = 9;
