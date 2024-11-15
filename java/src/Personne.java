@@ -20,7 +20,70 @@ public class Personne implements Observer {
         this.offresAcceptees=new ArrayList<>();
     }
 
-    //Getter et Setter 
+    //Getters et Setters
+    public String getNom(){
+        return this.nom;
+    }
+
+    public void setNom(String nom){
+        this.nom=nom;
+    }
+
+    public String getPrenom(){
+        return this.prenom;
+    }
+
+    public void setPrenom(String prenom){
+        this.prenom=prenom;
+    }
+
+    public ArrayList<Materiel> getInventaire(){
+        return this.inventaire;
+    }
+
+    public void setInventaire(ArrayList<Materiel> inventaire){
+        this.inventaire=inventaire;
+    }
+
+    public Logement getLogement(){
+        return this.logement;
+    }
+
+    public void setLogement(Logement logement){
+        this.logement=logement;
+    }
+
+    public ArrayList<String> getFiltresOffres(){
+        return this.filtresOffres;
+    }
+
+    public void setFiltresOffres(ArrayList<String> filtresOffres){
+        this.filtresOffres=filtresOffres;
+    }
+
+    public void addFiltreOffre(String filtre){
+        this.filtresOffres.add(filtre);
+    }
+
+    public void removeFiltreOffre(String filtre){
+        this.filtresOffres.remove(filtre);
+    }
+
+    public ArrayList<Offre> getOffresAcceptees(){
+        return this.offresAcceptees;
+    }
+
+    public void setOffresAcceptees(ArrayList<Offre> offresAcceptees){
+        this.offresAcceptees=offresAcceptees;
+    }
+
+    public void addOffreAcceptee(Offre offre){
+        this.offresAcceptees.add(offre);
+    }
+
+    public void removeOffreAcceptee(Offre offre){
+        this.offresAcceptees.remove(offre);
+    }
 
     //Methode 
     public void accepterOffre(Offre offre){
