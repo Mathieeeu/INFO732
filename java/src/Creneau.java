@@ -48,5 +48,11 @@ public class Creneau {
     public void setHeureFin(int heure){
         this.heureFin = heure;
     }
+
+    //To string
+    public String toString(){
+        return (nom+"\n"+date+"\n"+heureDebut+"h - "+heureFin+"h");
+
+    }
     
 }
