@@ -4,7 +4,7 @@ public class OffreMateriel extends Offre {
     private Materiel materiel;
 
     // Constructeur
-    public OffreMateriel(Personne auteur, String datePublication, String description, Materiel materiel) {
+    public OffreMateriel(PersonneConcret auteur, String datePublication, String description, Materiel materiel) {
         super(auteur, datePublication, description);
         this.materiel = materiel;
     }

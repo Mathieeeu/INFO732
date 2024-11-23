@@ -2,41 +2,41 @@ import java.util.ArrayList;
 
 public abstract class Offre {
     // Attributs 
-    private ArrayList<Personne> participants;
-    private Personne auteur;
+    private ArrayList<PersonneConcret> participants;
+    private PersonneConcret auteur;
     private String datePublication;
     private String description;
 
     // Constructeur
-    public Offre(Personne auteur, String datePublication, String description) {
+    public Offre(PersonneConcret auteur, String datePublication, String description) {
         this.auteur = auteur;
         this.datePublication = datePublication;
         this.description = description;
-        this.participants = new ArrayList<Personne>();
+        this.participants = new ArrayList<PersonneConcret>();
     }
 
     // Getters et Setters
-    public ArrayList<Personne> getParticipants() {
+    public ArrayList<PersonneConcret> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(ArrayList<Personne> participants) {
+    public void setParticipants(ArrayList<PersonneConcret> participants) {
         this.participants = participants;
     }
 
-    public void addParticipant(Personne participant) {
+    public void addParticipant(PersonneConcret participant) {
         this.participants.add(participant);
     }
 
-    public void removeParticipant(Personne participant) {
+    public void removeParticipant(PersonneConcret participant) {
         this.participants.remove(participant);
     }
 
-    public Personne getAuteur() {
+    public PersonneConcret getAuteur() {
         return auteur;
     }
 
-    public void setAuteur(Personne auteur) {
+    public void setAuteur(PersonneConcret auteur) {
         this.auteur = auteur;
     }
 

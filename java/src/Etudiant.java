@@ -1,26 +1,17 @@
-public class Etudiant {
+public class Etudiant extends PersonneDecorator{
     
     // Attributs
-    private Personne personne;
     private int numeroEtudiant;
     private String composante;
 
     // Constructeur
     public Etudiant(Personne personne, int numeroEtudiant, String composante) {
-        this.personne = personne;
+        super(personne);
         this.numeroEtudiant = numeroEtudiant;
         this.composante = composante;
     }
 
     // Getters et Setters
-    public Personne getPersonne() {
-        return personne;
-    }
-
-    public void setPersonne(Personne personne) {
-        this.personne = personne;
-    }
-
     public int getNumeroEtudiant() {
         return numeroEtudiant;
     }
@@ -40,7 +31,7 @@ public class Etudiant {
     // Méthodes
     // ToString
     public String toString() {
-        return personne.toString() + " (Etudiant à " + composante + ")";
+        return super.toString() + " (Etudiant)";
     }
 
     // Demander une offre de tutorat, renvoie true si la demande a été ajoutée, false sinon

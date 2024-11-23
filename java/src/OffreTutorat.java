@@ -5,7 +5,7 @@ public class OffreTutorat extends Offre {
     private String matiere;
 
     // Constructeur
-    public OffreTutorat(Personne auteur, String datePublication, String description, Tuteur tuteur, String matiere) {
+    public OffreTutorat(PersonneConcret auteur, String datePublication, String description, Tuteur tuteur, String matiere) {
         super(auteur, datePublication, description);
         this.tuteur = tuteur;
         this.matiere = matiere;

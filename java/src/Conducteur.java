@@ -1,24 +1,15 @@
-public class Conducteur {
+public class Conducteur extends PersonneDecorator {
     
     // Attributs
-    private Personne personne;
     private Voiture vehicule;
 
     // Constructeur
     public Conducteur(Personne personne, Voiture vehicule) {
-        this.personne = personne;
+        super(personne);
         this.vehicule = vehicule;
     }
 
     // Getters et Setters
-    public Personne getPersonne() {
-        return personne;
-    }
-
-    public void setPersonne(Personne personne) {
-        this.personne = personne;
-    }
-
     public Voiture getVehicule() {
         return vehicule;
     }
@@ -30,7 +21,7 @@ public class Conducteur {
     // Méthodes
     // ToString
     public String toString() {
-        return personne.toString() + " (Conducteur)";
+        return super.toString() + " (Conducteur)";
     }
 
     // Proposer une offre de covoiturage, renvoie true si l'offre a été ajoutée, false sinon
