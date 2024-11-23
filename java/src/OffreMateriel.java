@@ -1,10 +1,12 @@
+import java.time.LocalDate;
+
 public class OffreMateriel extends Offre {
     
     // Attributs
     private Materiel materiel;
 
     // Constructeur
-    public OffreMateriel(PersonneConcret auteur, String datePublication, String description, Materiel materiel) {
+    public OffreMateriel(Personne auteur, LocalDate datePublication, String description, Materiel materiel) {
         super(auteur, datePublication, description);
         this.materiel = materiel;
     }

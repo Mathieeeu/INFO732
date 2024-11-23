@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class OffreTutorat extends Offre {
 
     // Attributs
@@ -5,21 +7,12 @@ public class OffreTutorat extends Offre {
     private String matiere;
 
     // Constructeur
-    public OffreTutorat(PersonneConcret auteur, String datePublication, String description, Tuteur tuteur, String matiere) {
+    public OffreTutorat(Tuteur auteur, LocalDate datePublication, String description, String matiere) {
         super(auteur, datePublication, description);
-        this.tuteur = tuteur;
         this.matiere = matiere;
     }
 
     // Getters et Setters
-    public Tuteur getTuteur() {
-        return tuteur;
-    }
-
-    public void setTuteur(Tuteur tuteur) {
-        this.tuteur = tuteur;
-    }
-
     public String getMatiere() {
         return matiere;
     }

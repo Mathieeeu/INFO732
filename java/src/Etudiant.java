@@ -34,9 +34,8 @@ public class Etudiant extends PersonneDecorator{
         return super.toString() + " (Etudiant)";
     }
 
-    // Demander une offre de tutorat, renvoie true si la demande a été ajoutée, false sinon
-    public boolean demanderOffreTutorat(String datePublication, String description, String matiere) {
+    // Demander une offre de tutorat
+    public void demanderOffreTutorat(String datePublication, String description, String matiere) {
         // TODO
-        return false;
     }
 }

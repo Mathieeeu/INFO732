@@ -1,10 +1,12 @@
+import java.time.LocalDate;
+
 public class OffreLogement extends Offre {
     
     // Attributs
     private Logement logement;
 
     // Constructeur
-    public OffreLogement(PersonneConcret auteur, String datePublication, String description, Logement logement) {
+    public OffreLogement(Proprietaire auteur, LocalDate datePublication, String description, Logement logement) {
         super(auteur, datePublication, description);
         this.logement = logement;
     }

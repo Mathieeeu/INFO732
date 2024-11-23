@@ -96,4 +96,9 @@ public class Logement {
     public void removeHabitant(PersonneConcret habitant) {
         this.habitants.remove(habitant);
     }
+
+    //To String
+    public String toString(){
+        return (this.type+" - "+this.adresse+"\n"+this.proprietaire+"\n"+loyer+"\n"+description);
+    }
 }

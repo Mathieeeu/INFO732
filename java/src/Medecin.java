@@ -15,6 +15,10 @@ public class Medecin {
     }
 
     //Getters et setters
+    public static Medecin getInstance(){
+        return instance;
+    }
+
     public static Medecin getInstance(PersonneConcret personne){
         if (instance == null){
             instance = new Medecin(personne);

@@ -5,17 +5,17 @@ public class Activite {
     // Attributs
     private Creneau creneau;
     private String description;
-    private ArrayList<PersonneConcret> participants;
+    private ArrayList<Personne> participants;
     private String lieu;
-    private PersonneConcret organisateur;
+    private Personne organisateur;
 
     // Constructeur
-    public Activite(Creneau creneau, String description, String lieu, PersonneConcret organisateur) {
+    public Activite(Creneau creneau, String description, String lieu, Personne organisateur) {
         this.creneau = creneau;
         this.description = description;
         this.lieu = lieu;
         this.organisateur = organisateur;
-        this.participants = new ArrayList<PersonneConcret>();
+        this.participants = new ArrayList<Personne>();
     }
 
     // Getters et Setters
@@ -35,11 +35,11 @@ public class Activite {
         this.description = description;
     }
 
-    public ArrayList<PersonneConcret> getParticipants() {
+    public ArrayList<Personne> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(ArrayList<PersonneConcret> participants) {
+    public void setParticipants(ArrayList<Personne> participants) {
         this.participants = participants;
     }
 
@@ -59,7 +59,7 @@ public class Activite {
         this.lieu = lieu;
     }
 
-    public PersonneConcret getOrganisateur() {
+    public Personne getOrganisateur() {
         return organisateur;
     }
 

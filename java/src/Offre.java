@@ -1,26 +1,27 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 
 public abstract class Offre {
     // Attributs 
-    private ArrayList<PersonneConcret> participants;
-    private PersonneConcret auteur;
-    private String datePublication;
+    private ArrayList<Personne> participants;
+    private Personne auteur;
+    private LocalDate datePublication;
     private String description;
 
     // Constructeur
-    public Offre(PersonneConcret auteur, String datePublication, String description) {
+    public Offre(Personne auteur, LocalDate datePublication, String description) {
         this.auteur = auteur;
         this.datePublication = datePublication;
         this.description = description;
-        this.participants = new ArrayList<PersonneConcret>();
+        this.participants = new ArrayList<Personne>();
     }
 
     // Getters et Setters
-    public ArrayList<PersonneConcret> getParticipants() {
+    public ArrayList<Personne> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(ArrayList<PersonneConcret> participants) {
+    public void setParticipants(ArrayList<Personne> participants) {
         this.participants = participants;
     }
 
@@ -32,7 +33,7 @@ public abstract class Offre {
         this.participants.remove(participant);
     }
 
-    public PersonneConcret getAuteur() {
+    public Personne getAuteur() {
         return auteur;
     }
 
@@ -40,11 +41,11 @@ public abstract class Offre {
         this.auteur = auteur;
     }
 
-    public String getDatePublication() {
+    public LocalDate getDatePublication() {
         return datePublication;
     }
 
-    public void setDatePublication(String datePublication) {
+    public void setDatePublication(LocalDate datePublication) {
         this.datePublication = datePublication;
     }
 

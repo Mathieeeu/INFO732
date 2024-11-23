@@ -1,11 +1,13 @@
+import java.time.LocalDate;
+
 public class OffreBonPlan extends Offre {
 
     // Attributs
     private String lienSite;
-    private String dateExpiration;
+    private LocalDate dateExpiration;
 
     // Constructeur
-    public OffreBonPlan(PersonneConcret auteur, String datePublication, String description, String lienSite, String dateExpiration) {
+    public OffreBonPlan(Personne auteur, LocalDate datePublication, String description, String lienSite, LocalDate dateExpiration) {
         super(auteur, datePublication, description);
         this.lienSite = lienSite;
         this.dateExpiration = dateExpiration;
@@ -20,11 +22,11 @@ public class OffreBonPlan extends Offre {
         this.lienSite = lienSite;
     }
 
-    public String getDateExpiration() {
+    public LocalDate getDateExpiration() {
         return dateExpiration;
     }
 
-    public void setDateExpiration(String dateExpiration) {
+    public void setDateExpiration(LocalDate dateExpiration) {
         this.dateExpiration = dateExpiration;
     }
 }

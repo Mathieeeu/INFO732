@@ -1,10 +1,12 @@
+import java.time.LocalDate;
+
 public class OffreActivite extends Offre {
     
     // Attributs
     private Activite activite;
 
     // Constructeur
-    public OffreActivite(PersonneConcret auteur, String datePublication, String description, Activite activite) {
+    public OffreActivite(Personne auteur, LocalDate datePublication, String description, Activite activite) {
         super(auteur, datePublication, description);
         this.activite = activite;
     }

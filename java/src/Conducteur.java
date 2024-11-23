@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Conducteur extends PersonneDecorator {
     
     // Attributs
@@ -24,11 +26,11 @@ public class Conducteur extends PersonneDecorator {
         return super.toString() + " (Conducteur)";
     }
 
-    // Proposer une offre de covoiturage, renvoie true si l'offre a été ajoutée, false sinon
-    public boolean proposerOffreCovoiturage(String datePublication, String description, String villeDepart, String villeArrivee, String dateDepart, int nbPlaces) {
-        // TODO
-        return false;
+    // Proposer une offre de covoiturage, 
+    public void proposerOffreCovoiturage(int nbPlaces) { 
+        // Constructeur : OffreCovoiturage(PersonneConcret auteur, LocalDate datePublication, String description, Conducteur conducteur, int nbPlaces)
+        OffreCovoiturage offre = new OffreCovoiturage(this, LocalDate.now(), "Covoiturage", this, nbPlaces);
+        OffreManager.getInstance().publierOffre(offre);
+        System.out.println("Offre de covoiturage proposée !");
     }
-
-
 }
