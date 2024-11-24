@@ -14,7 +14,7 @@ public interface Personne extends Observer {
 
     public void publierOffreBonPlan(String lienSite, LocalDate dateExpiration);
 
-    public void desincrireOffre(Offre offre);
+    public void desinscrireOffre(Offre offre);
 
     public void demandeMateriel(Materiel materiel,boolean urgent);
 

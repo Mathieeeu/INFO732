@@ -217,9 +217,10 @@ public class PersonneConcret implements Personne {
     }
 
     @Override
-    public void desincrireOffre(Offre offre){
+    public void desinscrireOffre(Offre offre){
         offre.removeParticipant(this);
         this.offresAcceptees.remove(offre);
+        System.out.println("Désinscription de "+ this.prenom+" "+this.nom+" à l'offre de "+ offre.getClass().getName().substring(5));
     }
 
     @Override

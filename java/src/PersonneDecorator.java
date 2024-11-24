@@ -52,8 +52,8 @@ public abstract class PersonneDecorator implements Personne {
     }
 
     @Override
-    public void desincrireOffre(Offre offre){
-        decoratedPersonne.desincrireOffre(offre);
+    public void desinscrireOffre(Offre offre){
+        decoratedPersonne.desinscrireOffre(offre);
     }
 
     @Override

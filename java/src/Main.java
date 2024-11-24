@@ -96,5 +96,15 @@ public class Main {
         System.out.print("\033[38;5;137m");
         OffreManager.getInstance().afficherOffres();
         System.out.println("---\033[0m\n");
+
+        // Désinscription d'une offre
+        System.out.print("\033[38;5;137m");
+        personne2.desinscrireOffre(personne2.getOffresAcceptees().get(0));
+        System.out.println("---\033[0m\n");
+
+        // Récupération de la liste des offres
+        System.out.print("\033[38;5;137m");
+        OffreManager.getInstance().afficherOffres();
+        System.out.println("---\033[0m\n");
     }
 }
