@@ -13,10 +13,10 @@ public class Tuteur extends PersonneDecorator {
         return super.toString() + " (Tuteur)";
     }
 
-    // Proposer une offre de tutorat
-    public void proposerOffreTutorat(LocalDate datePublication, String description, String matiere) {
+    // publier une offre de tutorat
+    public void publierOffreTutorat(LocalDate datePublication, String description, String matiere) {
         OffreTutorat offre = new OffreTutorat(this, datePublication, description, matiere);
-        OffreManager.getInstance().publierOffre(offre);
         System.out.println("Offre de tutorat publiée !");
+        OffreManager.getInstance().publierOffre(offre);
     }
 }

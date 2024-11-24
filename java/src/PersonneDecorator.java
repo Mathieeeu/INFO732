@@ -4,18 +4,19 @@ import java.util.ArrayList;
 public abstract class PersonneDecorator implements Personne {
     protected Personne decoratedPersonne;
 
+    // Constructeur
     public PersonneDecorator(Personne personne) {
         this.decoratedPersonne = personne;
     }
     
     // Permet de récupérer la personne décorée sous un certain type (si possible)
-    public <T> T getDecoratedAs(Class<T> clazz) {
-        if (clazz.isInstance(this)) {
-            return clazz.cast(this);
+    public <T> T getDecoratedAs(Class<T> classe) {
+        if (classe.isInstance(this)) {
+            return classe.cast(this);
         } else if (decoratedPersonne instanceof PersonneDecorator) {
-            return ((PersonneDecorator) decoratedPersonne).getDecoratedAs(clazz);
-        } else if (clazz.isInstance(decoratedPersonne)) {
-            return clazz.cast(decoratedPersonne);
+            return ((PersonneDecorator) decoratedPersonne).getDecoratedAs(classe);
+        } else if (classe.isInstance(decoratedPersonne)) {
+            return classe.cast(decoratedPersonne);
         }
         return null;
     }
@@ -36,18 +37,18 @@ public abstract class PersonneDecorator implements Personne {
     }
 
     @Override
-    public void proposerOffreActivite(Activite activite){
-        decoratedPersonne.proposerOffreActivite(activite);
+    public void publierOffreActivite(Activite activite){
+        decoratedPersonne.publierOffreActivite(activite);
     }
 
     @Override
-    public void proposerOffreMateriel(Materiel materiel){
-        decoratedPersonne.proposerOffreMateriel(materiel);
+    public void publierOffreMateriel(Materiel materiel){
+        decoratedPersonne.publierOffreMateriel(materiel);
     }
 
     @Override
-    public void proposerOffreBonPlan(String lienSite, LocalDate dateExpiration){
-        decoratedPersonne.proposerOffreBonPlan(lienSite, dateExpiration);
+    public void publierOffreBonPlan(String lienSite, LocalDate dateExpiration){
+        decoratedPersonne.publierOffreBonPlan(lienSite, dateExpiration);
     }
 
     @Override
@@ -63,6 +64,11 @@ public abstract class PersonneDecorator implements Personne {
     @Override
     public void update(Offre offre){
         decoratedPersonne.update(offre);
+    }
+
+    @Override
+    public void inscrireOffreManager(){
+        decoratedPersonne.inscrireOffreManager();
     }
 
     @Override

@@ -77,4 +77,14 @@ public class OffreManager {
             observer.update(offre);
         }
     }
+
+    // Afficher la liste des offres
+    public void afficherOffres() {
+        System.out.println("Liste des offres : ");
+        int i = 0;
+        for (Offre offre : offres) {
+            System.out.println("[" + i + "] - " + offre);
+            i++;
+        }
+    }
 }

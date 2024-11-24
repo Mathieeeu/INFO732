@@ -19,4 +19,14 @@ public class OffreLogement extends Offre {
     public void setLogement(Logement logement) {
         this.logement = logement;
     }
+
+    public String toString() {
+        String etat;
+        if (this.getParticipants().isEmpty()) {
+            etat = "(Disponible) ";
+        } else {
+            etat = "(Réservé) ";
+        }
+        return "Offre de logement "+ etat +":\n" + super.toString() + "\n\t" + logement.toString();
+    }
 }

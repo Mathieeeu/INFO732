@@ -51,7 +51,7 @@ public class Creneau {
 
     //To string
     public String toString(){
-        return (nom+"\n"+date+"\n"+heureDebut+"h - "+heureFin+"h");
+        return (nom+" - "+date+" ( "+heureDebut+"h - "+heureFin+"h )");
 
     }
     

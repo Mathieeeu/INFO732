@@ -19,4 +19,8 @@ public class OffreActivite extends Offre {
     public void setActivite(Activite activite) {
         this.activite = activite;
     }
+
+    public String toString() {
+        return "Offre d'activité :\n\t- Nombre d'inscrits : " + this.getParticipants().size() + "\n" + super.toString();
+    }
 }

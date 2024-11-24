@@ -29,4 +29,14 @@ public class OffreCovoiturage extends Offre {
     public void setNbPlaces(int nbPlaces) {
         this.nbPlaces = nbPlaces;
     }
+
+    public String toString() {
+        String etat;
+        if (this.getParticipants().size() == this.nbPlaces) {
+            etat = "(Complet) ";
+        } else {
+            etat = "(Disponible) ";
+        }
+        return "Offre de covoiturage " + etat + ":\n" + super.toString() + "\n\t- Conducteur : " + conducteur.getPrenom() + " " + conducteur.getNom() + "\n\t- Places occupées : " + this.getParticipants().size() + "/" + nbPlaces;
+    }
 }

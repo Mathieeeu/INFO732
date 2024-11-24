@@ -26,4 +26,8 @@ public class Materiel {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String toString() {
+        return this.nom + " (" + this.description + ")";
+    }
 }

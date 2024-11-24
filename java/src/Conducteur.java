@@ -26,11 +26,11 @@ public class Conducteur extends PersonneDecorator {
         return super.toString() + " (Conducteur)";
     }
 
-    // Proposer une offre de covoiturage, 
-    public void proposerOffreCovoiturage(int nbPlaces) { 
+    // publier une offre de covoiturage, 
+    public void publierOffreCovoiturage(String description, int nbPlaces) { 
         // Constructeur : OffreCovoiturage(PersonneConcret auteur, LocalDate datePublication, String description, Conducteur conducteur, int nbPlaces)
-        OffreCovoiturage offre = new OffreCovoiturage(this, LocalDate.now(), "Covoiturage", this, nbPlaces);
+        OffreCovoiturage offre = new OffreCovoiturage(this, LocalDate.now(), description, this, nbPlaces);
+        System.out.println("Offre de covoiturage publiée par "+this.getPrenom()+" "+this.getNom()+"!");
         OffreManager.getInstance().publierOffre(offre);
-        System.out.println("Offre de covoiturage proposée !");
     }
 }

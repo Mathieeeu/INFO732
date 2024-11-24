@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class PersonneConcret implements Observer, Personne {
+public class PersonneConcret implements Personne {
     
     //Attributs
     private String nom;
@@ -121,22 +121,19 @@ public class PersonneConcret implements Observer, Personne {
                 } 
                 else {
                     offre.addParticipant(this);
+                    System.out.println("Offre de "+offre.getClass().getName().substring(5)+" acceptée par "+this.prenom+" "+this.nom);
                     this.offresAcceptees.add(offre);
-                    System.out.println("Offre acceptée");
                 }
                 break;
 
             case "OffreBonPlan":
                 if (LocalDate.now().isAfter(((OffreBonPlan) offre).getDateExpiration())) {
-                    System.out.println("Bon plan expiré");
+                    System.out.println("Bon plan expiré le "+((OffreBonPlan) offre).getDateExpiration());
                 } 
-                else if (!offre.getParticipants().isEmpty()) {
-                    System.out.println("Offre déjà complète");
-                }
                 else{
                     offre.addParticipant(this);
+                    System.out.println("Offre de "+offre.getClass().getName().substring(5)+" acceptée par "+this.prenom+" "+this.nom);
                     this.offresAcceptees.add(offre);
-                    System.out.println("Offre acceptée");
                 }
                 break;
             case "OffreActivite":
@@ -145,8 +142,8 @@ public class PersonneConcret implements Observer, Personne {
                 }
                 else{
                     offre.addParticipant(this);
+                    System.out.println("Offre de "+offre.getClass().getName().substring(5)+" acceptée par "+this.prenom+" "+this.nom);
                     this.offresAcceptees.add(offre);
-                    System.out.println("Offre acceptée");
                 }
                 break;
             default:
@@ -158,38 +155,38 @@ public class PersonneConcret implements Observer, Personne {
                 }
                 else{
                     offre.addParticipant(this);
+                    System.out.println("Offre de "+offre.getClass().getName().substring(5)+" acceptée par "+this.prenom+" "+this.nom);
                     this.offresAcceptees.add(offre);
-                    System.out.println("Offre acceptée");
                 }
                 break;
         }
     }
 
     @Override
-    public void proposerOffreMateriel(Materiel materiel){
+    public void publierOffreMateriel(Materiel materiel){
         // Vérifier si le matériel est bien dans l'inventaire de la personne
         if (!this.inventaire.contains(materiel)){
             System.out.println("Erreur - Vous ne possédez pas ce matériel");
         }
         else {
             OffreMateriel offre = new OffreMateriel(this, LocalDate.now(), "Offre de prêt de " + materiel.getNom(), materiel);
-            OffreManager.getInstance().publierOffre(offre);
             System.out.println("Offre de prêt de " + materiel.getNom() + " publiée par " + this.prenom + " " + this.nom);
+            OffreManager.getInstance().publierOffre(offre);
         }
     }
 
     @Override
-    public void proposerOffreActivite(Activite activite){
+    public void publierOffreActivite(Activite activite){
         OffreActivite offre = new OffreActivite(this, LocalDate.now(), "Offre d'activité", activite);
-        OffreManager.getInstance().publierOffre(offre);
         System.out.println("Offre d'activité publiée par " + this.prenom + " " + this.nom);
+        OffreManager.getInstance().publierOffre(offre);
     }
 
     @Override
-    public void proposerOffreBonPlan(String lienSite, LocalDate dateExpiration){
+    public void publierOffreBonPlan(String lienSite, LocalDate dateExpiration){
         OffreBonPlan offre = new OffreBonPlan(this, LocalDate.now(), "Offre de bon plan", lienSite, dateExpiration);
-        OffreManager.getInstance().publierOffre(offre);
         System.out.println("Offre de bon plan publiée par " + this.prenom + " " + this.nom);
+        OffreManager.getInstance().publierOffre(offre);
     }
 
 
@@ -200,13 +197,23 @@ public class PersonneConcret implements Observer, Personne {
     }
 
     @Override
+    public void inscrireOffreManager(){
+        System.out.println("Inscription de "+this.prenom+" "+this.nom+" à l'OffreManager");
+        OffreManager.getInstance().inscrire(this);
+    }
+
+    @Override
     public void update(Offre offre){
-        for (String filtre : this.filtresOffres){
-            if (filtre == offre.getClass().getName()){
-                System.out.println("Offre reçu par "+this.prenom+" "+this.prenom);
+        if (filtresOffres.isEmpty()){
+            System.out.println("\tOffre de "+ offre.getClass().getName().substring(5)+" reçue par "+this.prenom+" "+this.nom);
+        }
+        else {
+            for (String filtre : this.filtresOffres){
+                if (filtre == offre.getClass().getName()){
+                    System.out.println("\tOffre de "+ offre.getClass().getName().substring(5)+" reçue par "+this.prenom+" "+this.nom);
+                }
             }
         }
-        
     }
 
     @Override

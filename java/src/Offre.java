@@ -1,5 +1,5 @@
-import java.util.ArrayList;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public abstract class Offre {
     // Attributs 
@@ -55,5 +55,10 @@ public abstract class Offre {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    //To String
+    public String toString(){
+        return "\t- Publiée le " + this.datePublication + "\n\t- Par " + this.auteur.getPrenom() + " " + this.auteur.getNom() + "\n\t- Description : " + this.description;
     }
 }

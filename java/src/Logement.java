@@ -99,6 +99,6 @@ public class Logement {
 
     //To String
     public String toString(){
-        return (this.type+" - "+this.adresse+"\n"+this.proprietaire+"\n"+loyer+"\n"+description);
+        return "Logement :\n\t- " + this.type + " :\n\t- " + this.adresse + "\n\t- " + this.proprietaire.getPrenom() + " " + this.proprietaire.getNom() + "\n\t- Loyer : " + loyer + "\n\t- Description :" + description + "\n";
     }
 }

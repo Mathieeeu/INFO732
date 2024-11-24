@@ -20,4 +20,14 @@ public class OffreTutorat extends Offre {
     public void setMatiere(String matiere) {
         this.matiere = matiere;
     }
+
+    public String toString() {
+        String etat;
+        if (this.getParticipants().isEmpty()) {
+            etat = "(Disponible) ";
+        } else {
+            etat = "(Complet) ";
+        }
+        return "Offre de tutorat " + etat + ":\n" + super.toString() + "\n\t- Tuteur : " + tuteur.getPrenom() + " " + tuteur.getPrenom() + "\n\t- Matière : " + matiere;
+    }
 }

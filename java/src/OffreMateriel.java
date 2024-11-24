@@ -19,4 +19,14 @@ public class OffreMateriel extends Offre {
     public void setMateriel(Materiel materiel) {
         this.materiel = materiel;
     }
+
+    public String toString() {
+        String etat;
+        if (this.getParticipants().isEmpty()) {
+            etat = "(Disponible) ";
+        } else {
+            etat = "(Expirée) ";
+        }
+        return "Offre de materiel " + etat + ":\n" + super.toString() + "\n\t- Materiel : " + materiel.toString();
+    }
 }

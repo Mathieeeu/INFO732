@@ -29,4 +29,14 @@ public class OffreBonPlan extends Offre {
     public void setDateExpiration(LocalDate dateExpiration) {
         this.dateExpiration = dateExpiration;
     }
+
+    public String toString() {
+        String etat;
+        if (dateExpiration.isAfter(LocalDate.now())) {
+            etat = "(Expirée) ";
+        } else {
+            etat = "(Valide) ";
+        }
+        return "Offre de bon plan " + etat + ":\n" + super.toString() + "\n\t- Lien : " + lienSite + "\n\t- Expire le " + dateExpiration;
+    }
 }

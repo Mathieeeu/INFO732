@@ -35,10 +35,19 @@ public class Proprietaire extends PersonneDecorator {
         return super.toString() + " (propriétaire de " + biens.size() + " logements)";
     }
 
-    // Proposer une offre de logement
+    public void afficherBiens() {
+        System.out.println("Liste des logements de " + this.getPrenom() + " " + this.getNom() + " :");
+        int i = 0;
+        for (Logement logement : biens) {
+            System.out.println("[" + i + "] " + logement);
+            i++;
+        }
+    }
+
+    // publier une offre de logement
     public void proposerOffreLogement(LocalDate datePublication, String description, Logement logement) {
         OffreLogement offre = new OffreLogement(this, datePublication, description, logement);
-        OffreManager.getInstance().publierOffre(offre);
         System.out.println("Offre de logement publiée");
+        OffreManager.getInstance().publierOffre(offre);
     }
 }

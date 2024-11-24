@@ -1,24 +1,26 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public interface Personne {
+public interface Personne extends Observer {
     public String toString();
 
     public void demandeCreneauMedical();
 
     public void accepterOffre(Offre offre);
 
-    public void proposerOffreActivite(Activite activite);
+    public void publierOffreActivite(Activite activite);
 
-    public void proposerOffreMateriel(Materiel materiel);
+    public void publierOffreMateriel(Materiel materiel);
 
-    public void proposerOffreBonPlan(String lienSite, LocalDate dateExpiration);
+    public void publierOffreBonPlan(String lienSite, LocalDate dateExpiration);
 
     public void desincrireOffre(Offre offre);
 
     public void demandeMateriel(Materiel materiel,boolean urgent);
 
     public void update(Offre offre);
+
+    public void inscrireOffreManager();
 
     public String getNom();
 

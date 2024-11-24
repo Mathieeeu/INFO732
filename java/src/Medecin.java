@@ -41,7 +41,7 @@ public class Medecin {
 
     //Ajouter un RDV médical (méthode appelée par une personne)
     public Creneau ajouterRDV(){
-        Creneau dernierCreneau = this.dernierCreneauOccupé();
+        Creneau dernierCreneau = this.dernierCreneauOccupe();
         LocalDate date;
         int heureDebut;
         int heureFin;
@@ -66,7 +66,7 @@ public class Medecin {
     }
 
     //Renvoie le dernier creneau occupé
-    public Creneau dernierCreneauOccupé(){
+    public Creneau dernierCreneauOccupe(){
         if (!planning.isEmpty()){
             Creneau lastElement = planning.get(planning.size() - 1);
             return (lastElement);
