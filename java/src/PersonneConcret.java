@@ -208,6 +208,9 @@ public class PersonneConcret implements Personne {
             System.out.println("\tOffre de "+ offre.getClass().getName().substring(5)+" reçue par "+this.prenom+" "+this.nom);
         }
         else {
+            // Bonne initiative
+            // contains() paraît plus simple :)
+            // this.filtresOffres.contains(offre.getClass().getName());
             for (String filtre : this.filtresOffres){
                 if (filtre == offre.getClass().getName()){
                     System.out.println("\tOffre de "+ offre.getClass().getName().substring(5)+" reçue par "+this.prenom+" "+this.nom);

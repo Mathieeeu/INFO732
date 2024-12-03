@@ -4,9 +4,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("\n\n\t\033[43m\033[1;35m-- CAMPUS SIMULATOR 2024 --\033[0m\n\n");
 
+        Medecin medecin = Medecin.getInstance();
+        System.out.println(medecin); // renvoie null
+
         // Créer le medecin (singleton et "variable globale")
         System.out.print("\033[38;5;210m");
-        Medecin medecin = Medecin.getInstance(new PersonneConcret("Champion", "Maurice"));
+        medecin = Medecin.getInstance(new PersonneConcret("Champion", "Maurice"));
         System.out.println(medecin);
         System.out.println("---\033[0m\n");
 

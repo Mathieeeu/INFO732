@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.time.LocalDate;
+// ahahah
 import java.time.chrono.ThaiBuddhistChronology;
 
 public class Medecin {
@@ -19,6 +20,14 @@ public class Medecin {
         return instance;
     }
 
+    // Intéressant d'initialiser la personne ici
+    //
+    // Je comprends l'intêret d'utiliser la méthode getInstance() une fois qu'on à déjà instancié le
+    // singleton puisque ça évite de passer une PersonneConcret factice ou null à la fonction ci-dessous,
+    // cependant ça pourrait causer des soucis si on appele getInstance() avant getInstance(PersonneConcret)
+    // (voir main ligne 7).
+    // On pourrait à la place initialiser PersonneConcret directement dans l'attribut de classe (l18) et avoir
+    // qu'une seule fonction getInstance pour éviter toute confusion.
     public static Medecin getInstance(PersonneConcret personne){
         if (instance == null){
             instance = new Medecin(personne);
