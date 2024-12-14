@@ -9,6 +9,7 @@ public abstract class PersonneDecorator implements Personne {
         this.decoratedPersonne = personne;
     }
     
+    // Très bien
     // Permet de récupérer la personne décorée sous un certain type (si possible)
     public <T> T getDecoratedAs(Class<T> classe) {
         if (classe.isInstance(this)) {
@@ -21,6 +22,17 @@ public abstract class PersonneDecorator implements Personne {
         return null;
     }
 
+    // Je respecte le dévouement pour tous ces Override (:
+    // Blague à part aucune de ces méthodes n'ont besoin d'être override par Etudiant, Conducteur, Tuteur ou 
+    // Proprietaire, il pourrait donc être plus judicieux de les enlever de la classe Personne et de soit:
+    // 1) Simplement enlever les @Override dans PersonneConcret, ainsi les fonctions sont directement définies
+    //    avec leur implémentation dans la classe en question
+    // 2) Garder les méthodes sans définition et les mettre dans une nouvelle interface situé entre PersonneConcret
+    //    et Personne (Mais PersonneDecorator implémente toujours la classe Personne)
+    // Cela signifie que l'on ne pourra plus appeler les fonctions depuis Etudiant, Conducteur etc. mais on peut
+    // toujours y accèder depuis PersonneConcret donc il suffit de récupérer l'istance en bas des poupées russes,
+    // pourquoi pas même garder une référence vers l'instance "originelle" dans chaque décorateur.
+    // Et aussi ça permet d'éviter tous ces Override!
     @Override
     public String toString() {
         return decoratedPersonne.toString();

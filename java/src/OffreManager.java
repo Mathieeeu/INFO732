@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
+// Très bien
 public class OffreManager {
     // Attributs
     private static OffreManager instance; // Instance unique de OfferManager
@@ -47,6 +48,7 @@ public class OffreManager {
 
     // Méthodes
 
+    // Bien
     // Obtenir l'instance unique
     public static OffreManager getInstance() {
         if (instance == null) {
